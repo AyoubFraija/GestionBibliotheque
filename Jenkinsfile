@@ -6,11 +6,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/AyoubFraija/GestionBibliotheque.git'
+                git 'https://github.com/AyoubFraija/GestionBibliotheque.git', branch : 'master'
             }
         }
         stage('Build') {
             steps {
+                bat 'mvn clean'
                 bat 'mvn build'
             }
         }
