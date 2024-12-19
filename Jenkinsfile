@@ -22,11 +22,7 @@ pipeline {
        stage('Quality Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    bat """mvn clean verify sonar:sonar \
-                         -Dsonar.projectKey=GestionBibliotheque \
-                         -Dsonar.projectName='GestionBibliothèque' \
-                          -Dsonar.host.url=http://localhost:9000 \
-                          -Dsonar.token=sqp_96cd8242c584612e0cd3bb89edc6d3724885dab1"""
+                    bat 'mvn clean verify sonar:sonar'
                 }
             }
         }
