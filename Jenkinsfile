@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        MAVEN_HOME = tool 'Maven'
+        MAVEN_HOME = tool 'Default'
     }
     stages {
         stage('Checkout') {
