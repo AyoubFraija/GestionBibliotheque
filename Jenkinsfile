@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'echo %MAVEN_HOME%'
+                bat 'mvn build'
             }
         }
         stage('Test') {
