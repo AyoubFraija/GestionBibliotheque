@@ -22,7 +22,11 @@ pipeline {
        stage('Quality Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    bat 'sonar-scanner.bat -D"sonar.projectKey=GestionBibliotheque" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_6e0806f911d3de06c600aef132683b4d4ed04728"'
+                    bat """mvn clean verify sonar:sonar \
+                         -Dsonar.projectKey=GestionBibliotheque \
+                         -Dsonar.projectName='GestionBibliothèque' \
+                          -Dsonar.host.url=http://localhost:9000 \
+                          -Dsonar.token=sqp_96cd8242c584612e0cd3bb89edc6d3724885dab1"""
                 }
             }
         }
