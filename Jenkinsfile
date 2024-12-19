@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat '${MAVEN_HOME}/bin/mvn test'
+                bat 'mvn test'
             }
         }
         stage('Quality Analysis') {
