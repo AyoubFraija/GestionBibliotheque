@@ -12,7 +12,6 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'echo %MAVEN_HOME%'
-                bat '${MAVEN_HOME}/bin/mvn clean compile'
             }
         }
         stage('Test') {
