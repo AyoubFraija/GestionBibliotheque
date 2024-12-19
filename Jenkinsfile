@@ -19,13 +19,11 @@ pipeline {
                 bat 'mvn test'
             }
         }
-        stage('Quality Analysis') {
-            stage('Quality Analysis') {
+       stage('Quality Analysis') {
             steps {
-                    withSonarQubeEnv('SonarQube') { 
-                        sh 'mvn clean verify sonar:sonar '
-                    }
-            }
+                withSonarQubeEnv('SonarQube') {
+                    bat 'mvn sonar:sonar'
+                }
             }
         }
         stage('Deploy') {
